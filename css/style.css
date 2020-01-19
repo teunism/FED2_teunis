@@ -1,0 +1,910 @@
+/*importeer de fonts uit de map 'fonts'*/
+@font-face {
+    font-family: "Univers";
+    src: url("../fonts/UniversLTStd.otf");
+}
+
+@font-face {
+    font-family: "LLsolid";
+    src: url("../fonts/LLHvH-Solid89.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "LLsolidC";
+    src: url("../fonts/LLHvH-Solid89Condensed.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "LLicons";
+    src: url("../fonts/ll-icons.ttf");
+}
+
+/**************    bronnen fonts: https://lowlands.nl/   **************/
+
+
+/*  groen: #4CD066;*/
+/*  blauw: #0026CC;*/
+
+::selection {
+    background-color: #0026CC;
+    color: white;
+}
+
+/*bron scrollbar css:*/
+/*https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp*/
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0026CC;
+    box-shadow: inset 10px 0px 7px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4CD066;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    background-image: url(../img/background9.png);
+    background-size: 100%;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Univers', sans-serif;
+}
+
+#bodyArtiest {
+    background-image: url(../img/background2.png);
+    background-attachment: unset;
+    overflow-x: hidden;
+}
+
+main {
+    padding-top: 6em;
+    margin-bottom: 2em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'LLsolid', sans-serif;
+    width: 90%;
+    font-weight: 200;
+}
+
+h4 {
+    margin: 0;
+}
+
+h1 {
+    margin: 20px auto 20px auto;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    background-color: #0026CC;
+    box-shadow: inset 0 -10px 7px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+nav {
+    width: 70%;
+    margin: auto;
+    text-transform: uppercase;
+    font-family: 'LLsolidC', sans-serif;
+    font-weight: 200;
+    letter-spacing: -.5px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#homeButton {
+    margin: 0% 4% 0% 4%;
+}
+
+/*dit voegt het home-icooon toe aan menu item 'home'*/
+#homeButton span::before {
+    font-family: 'LLicons';
+    content: "\E905";
+    font-size: 30px;
+}
+
+/*dit voegt het pijl-icooon toe aan menu item 'meer'*/
+#more span::after,
+#terug span::before {
+    font-family: 'LLicons';
+    content: "\E911";
+    margin-left: 12px;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+/*dit voegt het pijl-icooon toe aan menu item 'programma' op de detailpagina*/
+#terug span::before {
+    margin-left: -1em;
+    transform: rotate(180deg);
+}
+
+nav li {
+    line-height: 4em;
+    margin: 0% 1% 0% 1%;
+}
+
+a {
+    cursor: pointer;
+    transition: .3s;
+}
+
+a:hover {
+    color: #4CD066;
+}
+
+/* video banner */
+.banner {
+    width: 100%;
+    position: relative;
+    z-index: -10;
+}
+
+.artiestBanner {
+    top: 4em;
+}
+
+.gif {
+    background-image: url(../img/top.gif);
+    height: 5em;
+    background-repeat: repeat-x;
+}
+
+.onder {
+    background-image: url(../img/bottom.gif);
+}
+
+video {
+    width: 100%;
+}
+
+.cta {
+    width: 20%;
+    font-family: 'LLsolid', sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    padding: 10px;
+    color: #0026CC;
+    background-color: white;
+    border: none;
+}
+
+/*****      FOOTER    ******/
+footer {
+    background: #0026CC;
+    width: 100%;
+    bottom: 0;
+    margin-top: 4em;
+    text-transform: uppercase;
+    box-shadow: inset 0 10px 7px rgba(0, 0, 0, 0.5);
+}
+
+footer h3 {
+    font-size: 1rem;
+}
+
+footer section {
+    background: #0026CC;
+}
+
+footer ul:first-child {
+    padding: 2% 10% 2% 10%;
+
+}
+
+footer nav {
+    width: 100%;
+    padding: 3em 10% 3em 10%;
+    border-top: 1px solid white;
+}
+
+/* social media icons */
+.socialmedia {
+    min-width: 5em;
+    font-family: 'LLicons';
+    font-size: 3em;
+    padding: 0;
+}
+
+.socialmedia li {
+    transition: .5s;
+}
+
+.socialmedia li:hover {
+    color: #4CD066;
+    transition: .5s;
+    cursor: pointer;
+}
+
+/* bron icons styling: https://lowlands.nl/ */
+/* de iconen uit het font LLicons worden hier via de unicodes toegevoegd ::before de html */
+#twitter::before {
+    content: "\E93E";
+}
+
+#facebook::before {
+    content: "\E929";
+}
+
+#instagram::before {
+    content: "\E938";
+}
+
+#spotify::before {
+    content: "\E92C";
+}
+
+#nieuwsbrief {
+    width: 26em;
+    display: flex;
+}
+
+footer input {
+    padding: .25em .5em .25em 1em;
+    border: none;
+    outline: none;
+}
+
+form input[type=text] {
+    width: 100%;
+}
+
+input[type=submit] {
+    background: #FFFFFF;
+    cursor: pointer;
+    font-family: 'LLicons';
+    font-size: 2em;
+    color: #0026CC;
+    transition: .5s;
+}
+
+input[type=submit]:hover {
+    color: #4CD066;
+    transition: .5s;
+}
+
+input::placeholder {
+    font-family: 'LLsolid';
+    text-transform: uppercase;
+}
+
+#sponsoren {
+    background: white;
+    box-shadow: 0 -10px 7px rgba(0, 0, 0, 0.5);
+}
+
+#sponsoren li {
+    margin: 1em 1em 1em 1em;
+}
+
+#sponsoren img {
+    width: 7em;
+}
+
+
+/*******************     line up        **********************/
+section {
+    background: #4CD066;
+}
+
+.filterGrid {
+    display: flex;
+    margin: 0em 1em 0em 1em;
+}
+
+.filterGrid ul {
+    flex-direction: column;
+}
+
+.filterGrid li {
+    margin-bottom: .5em;
+}
+
+/* dit is de styling van het filter */
+.filterGrid form {
+    position: sticky;
+    top: 4em;
+    font-family: 'LLsolid';
+    font-weight: 100;
+    color: black;
+    font-size: 1.4em;
+}
+
+.filterGrid label {
+    color: black;
+    transition: .2s;
+}
+
+.filterGrid fieldset {
+    border: none;
+}
+
+.filterGrid h2 {
+    color: black;
+}
+
+.filter {
+    width: 38.2%;
+    min-width: 12em;
+    padding: 1em;
+    margin: 0em 1em 0em 0em;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px 11px rgba(0, 0, 0, .75);
+}
+
+.genres {
+    padding: 1em 0em 3em 1em;
+    display: grid;
+    font-size: 1.0rem;
+    grid-template-columns: 38% 38%;
+    grid-column-gap: 2%;
+    background: #0026CC;
+    grid-row-gap: 4%;
+    box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .75);
+}
+
+.lineUp {
+    width: 60vw;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 28vw 28vw;
+    grid-gap: 1em;
+    background-image: url(../img/background5.png);
+    background-size: 140em;
+    box-shadow: 0 0 15px 11px rgba(0, 0, 0, .75);
+}
+
+
+/*Dit streept de labels door als de bijbehorende checkbox niet is aangevinkt*/
+input[type=checkbox] + label {
+    color: black;
+    text-decoration: #4CD066 double line-through;
+}
+
+/*de styling van de labels als de checkbox wel gecheckt is. */
+input[type=checkbox]:checked + label {
+    color: white;
+    text-decoration: none;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox] + label:hover {
+    color: #0026CC;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.genres input[type=checkbox] + label {
+    color: #4CD066;
+    text-decoration: black double line-through;
+}
+
+.genres input[type=checkbox]:checked + label {
+    color: white;
+    text-decoration: none;
+}
+
+.genres input[type=checkbox] + label:hover {
+    color: black;
+    transition: .2s;
+    cursor: pointer;
+}
+
+/*de user kan nu niet meer de labels selecteren, dit zorgt
+voor een fijnere interactie*/
+label {
+    user-select: none;
+}
+
+.verbergGenres {
+    font-size: 0rem;
+}
+
+/* Cards styling. */
+.card {
+    width: 100%;
+    margin: 0;
+    padding: 3em;
+    min-width: 12em;
+    transition: .5s;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #4CD066;
+    box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .85);
+}
+
+.card h1 {
+    width: 80%;
+    margin: 0;
+    color: black;
+}
+
+.card h2 {
+    font-size: 1em;
+}
+
+.lineUp h2 {
+    padding: 1.5em;
+    color: black;
+    cursor: default;
+    background: #4CD066;
+    background-image: url(../img/lola5.jpg);
+    background-repeat: no-repeat;
+}
+
+h2 span {
+    font-size: 3em;
+    color: white;
+}
+
+.card h3 {
+    margin-top: .1em;
+    color: #000000;
+    font-size: 2em;
+}
+
+h4 {
+    font-size: .8em;
+}
+
+.card figure {
+    margin: 0;
+}
+
+.card img {
+    width: 100%;
+    box-shadow: 0 0 15px 11px rgba(0, 0, 0, .85);
+    transition: .5s;
+    position: relative;
+    z-index: 0;
+}
+
+.card img:hover {
+    box-shadow: 0 0 150px 11px rgba(0, 0, 0, .25);
+    transition: .5s;
+    transform: scale(0.95);
+}
+
+.card:hover {
+    transform: rotateX(20deg);
+}
+
+.hiphop {
+    display: none;
+}
+
+/* toonCard animatie / toggleClass met js */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.toonCard {
+    display: block;
+    animation: fadeIn 1s;
+}
+
+/* toonCard animatie / toggleClass met js */
+.verbergCards {
+    display: none;
+}
+
+
+/****** Artiest/Detail pagina *****/
+
+/*dit voegt het pijl-icoon toe aan menu items */
+.artiestDetail {
+    width: 65%;
+    margin: auto;
+    padding: 2em;
+    background-image: url(../img/inset-background-2.png);
+    background-size: 50%;
+    box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .75);
+    background-position: center;
+}
+
+.artiestDetail > section {
+    width: 95%;
+    margin: auto;
+    padding: 1em;
+    box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .75);
+}
+
+.artiestDetail h2 {
+    width: 85%;
+    color: black;
+    font-size: 2.2em;
+    margin: .3em auto 1em auto;
+}
+
+.artiestDetail h3 {
+    width: 85%;
+    margin: 1em auto 0em auto;
+    color: #FFFFFF
+}
+
+.artiestDetail h4 {
+    color: black;
+}
+
+.artiestDetail figure {
+    width: 85%;
+    margin: auto;
+    box-shadow: inset 0 0 15px 11px rgba(0, 0, 0, .75);
+}
+
+.artiestDetail img {
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 0 15px 11px rgba(0, 0, 0, .75);
+}
+
+.artiestDetail p {
+    width: 85%;
+    margin: 2em auto;
+    color: black;
+    line-height: 1.5em;
+}
+
+
+.artiestSocial span {
+    font-family: 'LLicons';
+    margin-left: -1em;
+    position: absolute;
+}
+
+.artiestDetail section:nth-child(2) {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.artiestDetail section:nth-child(2) > section {
+    width: 20%;
+    height: 8em;
+    margin-top: 1em;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.artiestSocial {
+    display: flex;
+    flex-direction: column;
+    font-family: 'LLsolid';
+    padding-left: 1em;
+    margin-top: .5em;
+}
+
+.artiestSocial li a {
+    color: black;
+    opacity: .6;
+    text-transform: uppercase;
+}
+
+.artiestSocial li a:hover {
+    color: white;
+    opacity: 1;
+}
+
+.artiestDetail iframe {
+    width: 60%;
+    height: 18em;
+    margin: 5% 10% 5% 5%;
+    border: none;
+}
+
+/*
+Deze css is voor de nieuwspagina die niet af is
+/*******************       nieuws         ********************
+.articleGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-gap: 3%;
+    width: 80%;
+
+    padding: 0px;
+    margin: auto auto 200px auto;
+    position: relative;
+}
+
+.articleGrid li {
+    padding: 0px;
+}
+
+/*faq styling
+article h1 {
+    width: 93vw;
+    margin: 0px auto 50px auto
+}
+
+.filterGrid {
+    display: flex;
+    flex-direction: row;
+    width: 93vw;
+    margin: auto;
+}
+
+/* accordions op de pagina FAQ 
+#QandA ul {
+    width: 90%;
+    margin: auto;
+}
+
+.accordionButton {
+    background-color: rgb(0, 38, 204);
+    padding-left: 36px;
+    line-height: 80px;
+    width: 100%;
+    border: none;
+    color: white;
+    font-family: 'Exo';
+    text-transform: uppercase;
+    text-align: left;
+    transition: .3s;
+}
+
+.accordionButton:hover {
+    background-color: hsl(229, 100%, 30%);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button {
+    width: 100%;
+    z-index: 2;
+}
+
+.answer {
+    background-color: pink;
+    position: relative;
+    height: 300px;
+}
+
+.active {
+    animation: schuif .5s;
+    animation-fill-mode: forwards;
+}
+*/
+
+/* ********************************************** */
+
+
+
+/*knop voor mobiel switchen van lineUp/filter*/
+#filterKnop {
+    display: none;
+}
+
+.verbergLineUp {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* wordt niet gebruikt
+ANIMATIE 1
+@keyframes schuif {
+    from {
+        height: 300px;
+    }
+
+    to {
+        height: 100px;
+    }
+}
+*/
+
+@media screen and (max-width: 900px) {
+
+    /*tablet*/
+    header nav {
+        width: 100%;
+    }
+
+    header nav li {
+        margin: 0% 4% 0% 4%;
+    }
+
+    header ul {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    header ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    form input[type=text] {
+        width: 60%;
+    }
+
+    #sponsoren img {
+        width: 4em;
+    }
+
+    /*lineUp css */
+    .lineUp {
+        grid-template-columns: 54vw;
+    }
+
+    .lineUp h2 {
+        background-size: 100%;
+        background-position: bottom;
+        font-size: 1em
+    }
+
+    .genres {
+        grid-template-columns: 1fr;
+        font-size: .6em;
+        padding-bottom: 12em;
+    }
+
+    /*artiest css */
+    .artiestDetail {
+        width: 90%;
+    }
+
+    .artiestBanner video {
+        width: 80em;
+    }
+
+    .artiestDetail section:nth-child(2) > section {
+        margin-left: -2em;
+
+    }
+
+    .artiestSocial li {
+        font-size: .8em;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    /*dit is een breakpoint speciaal voor het herplaatsen van het filter*/
+    /*en het veranderen naar een 1-koloms layout*/
+    body {
+        overflow-x: hidden;
+    }
+
+    .filterGrid {
+        width: 95vw;
+        margin: 0;
+        position: relative;
+        top: -3em;
+
+    }
+
+    .filter {
+        position: absolute;
+        width: 98vw;
+        top: -3em;
+    }
+
+    .genres {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+        font-size: .8em;
+        padding-bottom: 2em;
+    }
+
+    .lineUp {
+        width: 95%;
+        margin: auto;
+        grid-template-columns: 100%;
+    }
+
+    #filterKnop {
+        display: block;
+        width: 100%;
+        background: #4CD066;
+        position: fixed;
+        font-family: 'LLsolid';
+        color: black;
+        font-size: 1.8em;
+        padding: 1em;
+        bottom: 0;
+        box-shadow: 0px -10px 7px rgba(0, 0, 0, 0.5);
+        transition: .5s;
+    }
+
+    #filterKnop:hover {
+        color: white;
+        transition: .5s;
+        cursor: pointer;
+    }
+
+    .verbergFilter {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    /*mobiel*/
+
+    form input[type=text] {
+        width: 40%;
+    }
+
+    /*artiest css */
+    .artiestBanner video {
+        width: 60em;
+    }
+
+    .artiestDetail {
+        width: 95%;
+        padding: 1em;
+    }
+
+    .artiestDetail section:nth-child(2) {
+        flex-direction: column-reverse;
+    }
+
+    .artiestDetail iframe {
+        width: 90%;
+        height: 10em;
+    }
+
+    .artiestDetail section:nth-child(2) h4 {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    .artiestDetail section:nth-child(2) > section {
+        width: 100%;
+        height: 12em;
+        margin-left: 1em;
+
+    }
+
+    .artiestSocial li {
+        font-size: .8em;
+    }
+
+}
